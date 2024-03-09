@@ -1,9 +1,11 @@
-telly:
-  image: tellytv/telly:dev-ffmpeg
-  ports:
-    - "6077:6077"
-  environment:
-    - TZ=Europe/Amsterdam
-  volumes:
-    - /host/path/to/telly.config.toml:/etc/telly/telly.config.toml
-  restart: unless-stopped
+version: "1.0"
+services:
+  telly:
+    image: tellytv/telly:dev-ffmpeg
+    ports:
+      - "6077:6077"
+    environment:
+      - TZ=Europe/Amsterdam
+    volumes:
+      - /host/path/to/telly.config.toml:/etc/telly/telly.config.toml
+    restart: unless-stopped
